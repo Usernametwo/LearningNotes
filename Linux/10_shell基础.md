@@ -88,4 +88,40 @@
     - t seconds
     - n charLength
     - s:secure
+    
 ## Bash运算符
+### 数值运算与运算符
+- declare [+/-][选项] variable
+    - '-':设定属性类型
+    - '+':取消变量的属性类型
+    - i:integer
+    - x:环境变量
+    - p:显示指定变量的被声明类型
+    > declare -i cc=$aa+$bb
+- expr
+    > cc=$(expr $aa + $bb)
+- $((运算式))和$[运算式]
+    > cc=$(($aa+$bb))
+    > cc=$[$aa+$bb]
+    > $(系统命令)
+
+### 变量测试与内容替换
+> x=${y-new}:如果y存在,则x=$y,否则x=new
+> x=${y:-new}:如果y存在且不为空(length=0),则x=$y,否则x=new
+...
+
+## 环境变量配置文件
+- source 配置文件 或者 . 配置文件
+    > 让配置文件生效
+- 环境变量配置文件
+    > 环境变量配置文件中主要定义对系统操作环境生效的系统默认环境变量，比如PATH,HISTSIZE,PS1,HOSTNAME等
+    - /etc/profile:登录时调用的文件，在里面调用了/etc/bash.bashrc和/etc/profile.d/*.sh文件
+    - /etc/bash.bashrc
+    - /etc/profile.d/*.sh
+    - ~/.bashrc
+    > /etc目录下面的环境变量对所有用户生效
+- 其他配置文件
+    - ~/.bash_logout:登出时的一些操作
+    - ~/.bash_history:历史命令保存文件
+    - /etc/issue:本地登录之后提示信息
+    - /etc/issue.net和/etc/ssh/sshd_config:remote
