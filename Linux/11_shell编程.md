@@ -63,7 +63,7 @@
 
 - 按照文件类型进行判断
     > test [选项] filename
-    > [ -选项 filename]
+    > [ -选项 filename ]
     - d:判断是否是目录且存在
     - e:判断路径是否存在
     - f:判断是否是文件且存在
@@ -95,7 +95,7 @@
     - !
 ## 流程控制
 - if 
-    ```
+    ```shell
     if [ 条件表达式 ]; then
         ...
     fi
@@ -104,7 +104,66 @@
         then
         ...
     fi
+
+    if [ 条件表达式 ]
+        then
+            ...
+    else
+            ...
+    fi 
+
+    if [ 条件表达式 ]
+        then
+        ...
+    elif [ 条件表达式 ]
+        then
+        ...
+    else
+        ...
+    fi
     ```
 - case
+    ```shell
+    case $variable in
+        "option1")
+            ...
+            ;;
+        "option2")
+            ...
+            ;;
+        *)
+            ...
+            ;;
+    esac
+    ```
+
 - for
+    ```shell
+    for variable in value1 value2 value3
+    do
+        ...
+    done
+
+    for variable in $(ls *.sh)
+    do
+        echo $variable
+    done
+
+    for ((initialization; condition; body))
+    do
+        ...
+    done
+    ```
+
 - while
+    ```shell
+    while [ 条件表达式 ]
+    do
+        ...
+    done
+
+    until [ 条件表达式 ]
+    do
+        ...
+    done
+    ```
