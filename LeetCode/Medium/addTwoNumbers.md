@@ -61,4 +61,4 @@ class Solution {
 
 ## Best Solution
 
-未找到其他简便方法
+暂未发现
