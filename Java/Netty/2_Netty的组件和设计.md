@@ -29,3 +29,20 @@
     > 服务器端使用，两组EvenetLoopGroup和Channel，一组用来处理监听套接字，另一组用来处理已经连接的套接字
 
 ## ByteBuf
+
+- 读写索引分离
+- 池化
+- 引用计数
+
+### 缓冲区的类型
+
+- 堆缓冲区(ByteBuf)：数据存储在JVM堆上，处理数据比较方便，hasArray()方法会返回true，因为有支撑数组
+- 直接缓冲区(ByteBuf)：通过本地调用来分配内存，避免了I/O操作时中间缓冲区的内容复制操作，缺点为当需要处理数据时，需要将数据复制到JVM堆上，hasArray()方法会返回false，无支撑数组
+- 复合缓冲区(CompositeByteBuf)：多个缓冲区的组合，继承自ByteBuf
+
+### ByteBufAllocator
+
+可以通过Channel.alloc()或者ChannelHandlerContext.alloc()获取ByteBufAllocator的引用
+
+- PooledByteBufAllocator：用来创建池化了ByteBuf的实例，减少内存碎片，默认使用
+- UnpooledByteBufAllocator：创建非池化的ByteBuf实例
