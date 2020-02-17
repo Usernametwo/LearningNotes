@@ -41,7 +41,7 @@ class Solution {
 }
 ```
 
-## Best Solutions
+## Other Solutions
 - 没有必要一开始把所有的元素都装进HashMap里面
 ```java
 public int[] twoSum(int[] nums, int target) {
