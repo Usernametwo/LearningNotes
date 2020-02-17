@@ -34,6 +34,6 @@ class Solution {
 }
 ```
 
-## Best Solution
+## Other Solution
 
 暂未发现

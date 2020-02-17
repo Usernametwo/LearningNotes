@@ -29,7 +29,7 @@ class Solution {
 }
 ```
 
-## Best Solution
+## Other Solution
 
 - 使用HashMap直接记录下标，如果有重复字符直接将滑动窗口的i下标移动至重复的字符所在
 - HashMap可以直接使用数组代替，不过思路基本一样
