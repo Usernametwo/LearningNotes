@@ -41,7 +41,6 @@ public class CompressUtil {
     private static void preHandler(File srcFile, File desFile) {
         if (!desFile.isFile()) {
             System.out.println("目标路径必须为文件");
-            System.exit(0);
         }
     }
 

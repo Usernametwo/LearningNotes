@@ -61,3 +61,6 @@ class Solution {
     }
 }
 ```
+
+## Other Solution
+
